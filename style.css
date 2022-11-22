@@ -1,0 +1,29 @@
+body{
+    height: 2000px;
+}
+
+#menu{
+    position:fixed;
+    top:0;
+    left:0; /*fixando no canto superior esquerdo*/
+    width: 100%;
+    height:50px;
+    background-color: #333;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    align-items:center;
+    height:100%;
+    margin: 0;
+}
+
+li{
+    margin-right:10px;
+}
+
+a{
+    color:#FFF;
+}
+
