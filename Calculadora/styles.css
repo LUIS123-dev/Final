@@ -1,6 +1,4 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: Helvetica;
   }
@@ -82,7 +80,9 @@
   }
 
   body{
-    height: 1000px;
+    height: 800px;
+    background-image: url("./backgroud.jpeg");
+
 }
 
 #menu{
@@ -91,8 +91,9 @@
     left:0; /*fixando no canto superior esquerdo*/
     width: 100%;
     height:50px;
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.336)
 }
+
 
 ul{
     list-style: none;
@@ -109,3 +110,5 @@ li{
 a{
     color:#FFF;
 }
+
+
