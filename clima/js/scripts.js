@@ -69,3 +69,7 @@ cityInput.addEventListener("keyup", (e) => {
     }
 })
 
+function home(){
+    window.location.href = "../../index.html";
+  }
+

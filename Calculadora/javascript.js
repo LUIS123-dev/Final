@@ -144,3 +144,7 @@ buttons.forEach((btn) => {
   });
 });
 
+function home(){
+  window.location.href = "../../index.html";
+}
+

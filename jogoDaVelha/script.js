@@ -63,3 +63,7 @@ function check() {
     return;
   }
 }
+
+function home(){
+  window.location.href = "../../index.html";
+}
