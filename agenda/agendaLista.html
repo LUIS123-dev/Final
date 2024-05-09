@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibindo Lista de Objetos do LocalStorage em uma Tabela</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Itens na Lista:</h1>
+    <table id="tabela-itens">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Itens serão adicionados aqui dinamicamente -->
+        </tbody>
+    </table>
+
+    <script>
+        // Recupera a lista do localStorage
+        var listaString = localStorage.getItem('listaUserAniversario');
+
+        // Verifica se a lista existe no localStorage
+        if (listaString) {
+            // Converte a string JSON de volta para um array JavaScript
+            var lista = JSON.parse(listaString);
+
+            // Obtém a referência à tabela onde os itens serão exibidos
+            var tabela = document.getElementById('tabela-itens').getElementsByTagName('tbody')[0];
+
+            // Limpa o conteúdo atual da tabela
+            tabela.innerHTML = '';
+
+            // Itera sobre cada item da lista e adiciona à tabela
+            lista.forEach(function (item) {
+                // Cria uma nova linha na tabela
+                var newRow = tabela.insertRow();
+
+                // Adiciona células na nova linha
+                var nomeCell = newRow.insertCell(0);
+                var dataCell = newRow.insertCell(1);
+
+                // Adiciona texto às células com as propriedades do objeto
+                nomeCell.textContent = item.nomeCad;
+                dataCell.textContent = item.userCad;
+            });
+        } else {
+            // Se a lista não existir no localStorage, exibe uma mensagem
+            alert('Lista não encontrada no localStorage.');
+        }
+    </script>
+</body>
+
+</html>
